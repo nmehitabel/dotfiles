@@ -278,7 +278,13 @@ fi
 # colors {{{1
 #
 # color setup for ls:
-check_com dircolors && eval $(dircolors -b)
+if check_com dircolors; then
+  if [[ -a $HOME/.dircolors/dircolors.256dark ]]; then
+    eval $(dircolors -b $HOME/.dircolors/dircolors.256dark)
+  else
+    eval $(dircolors -b)
+  fi
+fi
 
 # support colors in less
 export LESS_TERMCAP_mb=$'\E[01;31m'
