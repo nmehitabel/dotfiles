@@ -660,6 +660,9 @@ if $plugins; then
 		zgen save
 	fi
 fi;
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080,bg=bold,underline"
+
 ##############################
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
