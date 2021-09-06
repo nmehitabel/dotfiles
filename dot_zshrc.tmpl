@@ -760,4 +760,5 @@ check_com direnv && eval "$(direnv hook zsh)"
 
 {{ if (eq .chezmoi.osRelease.id "pop") }}
 if [ -e /home/gcasey/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gcasey/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 {{ end }}
